@@ -1,3 +1,4 @@
+#!/bin/bash
 yum -y install httpd
 systemct1 enable httpd
 systemctl start  httpd
