@@ -1,6 +1,6 @@
-cd /etc/httpd/conf.d/ lets you to conf.d directory
-#!bin/bash
+cd /etc/httpd/conf.d/ # lets you to conf.d directory
+#!bin/bash            # the script should always be run with bash
 
-for file in $(ls -p /etc/httpd/conf.d | grep -v / ); do 
-echo "backing up $file" cp $file $file.orig;  
+for file in $(ls -p /etc/httpd/conf.d | grep -v / ); do   # case statement to test whether the conditon is true or not
+echo "backing up $file" cp $file $file.orig;              
 done
