@@ -1,4 +1,6 @@
-#!bin/bash
-while IFS='' read -r line || [[ -n "$line" ]]; do
+vim while.sh    #Shell script which you can execute in a terminal
+#!bin/bash      #the script should always be run with bash                                
+
+while IFS='' read -r line || [[ -n "$line" ]]; do # check the condition whether the statement is true or not
 echo "Text read from file: $line"
 done < "$1"
