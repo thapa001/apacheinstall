@@ -1,4 +1,4 @@
-cd /etc/httpd/conf.d/
+cd /etc/httpd/conf.d/ lets you to conf.d directory
 #!bin/bash
 
 for file in $(ls -p /etc/httpd/conf.d | grep -v / ); do 
