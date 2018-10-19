@@ -1,4 +1,5 @@
-#!/bin/bash
+vim user.sh # gives the name of script 
+#!/bin/bash # the script should always be run with bash
 value=$( grep -ic "$1" /etc/passwd )
 if [ $value -eq 1 ]; then
   echo " I found $1" 
