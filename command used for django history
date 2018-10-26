@@ -1,0 +1,53 @@
+1  source /opt/django/project1/manage.py runserver 0.0.0.0:8000&
+    2  q
+    3  source /opt/django/django/bin/activate
+    4  /opt/django/project1/manage.py runserver 0.0.0.0:8000&
+    5  q
+    6  grep -iR ALLOWED /opt/django/project1
+    7  vim /opt/django/project1/project1/settings.py
+    8  clear
+    9  vim /opt/django/project1/project1/settings.py
+   10  /opt/django/project1/manage.py runserver 0.0.0.0:8000&
+   11  python -m django --version
+   12  pwd
+   13  django-admin startproject mysite
+   14  ls -l
+   15  cat mysite
+   16  python manage.py runserver
+   17  python manage .py runserver
+   18  cat startproject
+   19  ls -alt
+   20  cd mysite
+   21  python manage.py runserver
+   22  q
+   23  tree mysite
+   24  ls -alt
+   25  ls
+   26  ps aux | grep 8000
+   27  kill 1684
+   28  kill 2150
+   29  python manage.py runserver
+   30  curl 120.0.0.1:8000&
+   31  curl 127.0.0.1:800&
+   32  q
+   33  curl 127.0.0.1:8000
+   34  python manage.py runserver&
+   35  curl 127.0.0.1:8000
+   36  ps aux | grep 8000
+   37  ps aux | grep manage.py
+   38  pwd
+   39  cd /home
+   40  cd mysite
+   41  cd /home/pradip00700pradip/mysite
+   42  python manage.py runserver 0.0.0.0:8000&
+   43  ps aux | grep 8000
+   44  ps aux | grep manage.py 
+   45  kill 2634
+   46  kill 2636
+   47  pwd
+   48  cd mysite/
+   49  vim settings.py 
+   50  cd ..
+   51  python manage.py runserver 0.0.0.0:8000&
+   52  yum -y install tree
+   53  sudo yum -y install tree
