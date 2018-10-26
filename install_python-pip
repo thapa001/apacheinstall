@@ -1,0 +1,34 @@
+sudo su
+yum -y install python-pip
+pip install virtualenv         # install virtual virtualenv using pip
+pip install --upgrade pip       #upgrade the current version
+mkdir /opt/django
+cd /opt/django/
+
+yum install python36             ####install python
+virtualenv -p python36 django
+python --version                 #show version
+source django/bin/activate       
+ pip install django
+ django-admin --version         # python 2.1.2
+
+django-admin startproject project1   # start project1
+ 
+ # change the user for django and project1 to username 
+ chown -R pradip00700pradip django   
+ chown -R pradip00700pradip project1
+ 
+ #start django server
+ 
+ source /opt/django/django/bin/activate
+ /opt/django/project1/manage.py runserver 0.0.0.0:8000&
+ 
+ # django url and allow ip address to work
+ grep -iR ALLOWED /opt/django/project1
+ vim /opt/django/project1/project1/settings.py
+
+/home/pradip00700pradip # home directory for django project
+django-admin startproject mysite
+
+
+ 
