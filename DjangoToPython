@@ -33,7 +33,7 @@ imports os
  
  #start django server
  
- #os.system('source /opt/django/django/bin/activate')
+ os.system('source /opt/django/django/bin/activate')
  #os.system('/opt/django/project1/manage.py runserver 0.0.0.0:8000&')
  
  # django url and allow ip address to work
