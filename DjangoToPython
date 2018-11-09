@@ -8,7 +8,7 @@ imports os
  
  ##mkdir /opt/django
  os.mkdir('mkdir /opt/django/')
- os.chdir('cd /opt/django')
+ os.chdir('/opt/django')
  
  
  #running python 2 but  want 3.6
