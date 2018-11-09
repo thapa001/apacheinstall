@@ -1,0 +1,39 @@
+#!/usr/bin/python
+
+imports os
+ def django_install():
+ os.system('sudo su')
+ os.system('yum -y install python-pip')
+ os.system('pip install virtualenv')         # install virtual virtualenv using pip
+ os.system('pip install --upgrade pip')       #upgrade the current version
+##mkdir /opt/django
+ os.mkdir('cd /opt/django/')
+ os.chdir('cd /opt/django')
+
+ os.system('yum install python36')                          ####install python 2
+ os.system('virtualenv -p python36') django
+ os.system('python --version')                 #show version
+ os.system('source django/bin/activate')       
+ os.system('pip install django')
+ os.system('&& django-admin --version')         # python 2.1.2
+
+ os.system('django-admin startproject project1')   # start project1
+ 
+ # change the user for django and project1 to username 
+ os.system('chown -R pradip00700pradip django')   
+ os.system('chown -R pradip00700pradip project1')
+ 
+ #start django server
+ 
+ os.system('source /opt/django/django/bin/activate')
+ os.system('/opt/django/project1/manage.py runserver 0.0.0.0:8000&')
+ 
+ # django url and allow ip address to work
+ os.system('grep -iR ALLOWED /opt/django/project1')
+ os.system('vim /opt/django/project1/project1/settings.py')
+
+os.system('/home/pradip00700pradip') # home directory for django project
+django-admin startproject mysite
+
+
+ 
