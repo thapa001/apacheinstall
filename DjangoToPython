@@ -7,34 +7,36 @@ imports os
  
  
  ##mkdir /opt/django
- os.mkdir('mkdir /opt/django/')
+ os.mkdir('/opt/django/')
  os.chdir('/opt/django')
  
  
  #running python 2 but  want 3.6
  os.system('yum -y install python36')
  os.system('virtualenv -p python36 django')
- 
+ print("Good-to-Go")
  os.system('source /opt/django/django/bin/activate && pip install django')
+ print("Good-to-Go")
  #still in 2.7.5 need 3.6
+ 
  os.chdir('/opt/django')
+ print("Good-to-Go")
  os.system('source /opt/django/django/bin/activate ' + \
            '&& django-admin --version ' + \
            '&& django-admin startproject project1')
+ print("Good-to-Go")
 
-      
- ## start project
- ##change ownership from root to a user
- #os.system('django-admin startproject project1')   
- 
- # change the user for django and project1 to username 
- os.system('chown -R pradip00700pradip /opt/django')   
- #os.system('chown -R pradip00700pradip project1')
+ ##change ownership from root to a user  
+ os.system('chown -R pradip00700pradip /opt/django')  
+ print("Good-to-Go")
+ os.system('chown -R pradip00700pradip /opt/django/project1')
+ print("Good-to-Go")
  
  #start django server
  
- os.system('source /opt/django/django/bin/activate' + \
-            '&& python /opt/django/project1/manage.py runserver 0.0.0.0:8000&')
+ os.system('sudo -u pradip00700pradip sh -c "source /opt/django/django/bin/activate' + \
+            '&& python /opt/django/project1/manage.py runserver 0.0.0.0:8000&"')
+ print("Good-to-Go")
  
  # django url and allow ip address to work
  #os.system('grep -iR ALLOWED /opt/django/project1')
