@@ -4,37 +4,35 @@ from oauth2client.client import GoogleCredentials
 from googleapiclient import discovery
 import pprint
 import json
-# import create_ldap
-# from create_ldap import create_instance
 credentials = GoogleCredentials.get_application_default()
 compute = discovery.build('compute', 'v1', credentials=credentials)
 project = "aerobic-kit-217802"
 zone = "us-east1-b"
 #what kind of machine is being requested and what should it's name be?
 #based on the machine type, we can derrive a name
-name = 'testing'
+name = "testing"
 def list_instances(compute, project, zone):
     result = compute.instances().list(project=project, zone=zone).execute()
     return result['items']
 def create_instance(compute, project, zone, name):
     startup_script = open('startup-script.sh', 'r').read()
     image_response = compute.images().getFromFamily(
-       project='centos-cloud', family='centos-7').execute()
+      project='centos-cloud', family='centos-7').execute()
     source_disk_image = image_response['selfLink']
     machine_type = "zones/%s/machineTypes/f1-micro" % zone
     config = {
         'name': name,
         'machineType': machine_type,
        #specify the boot disk and the image to use as a source.
-        'disk': [
-           {
-             'boot': True,
-             'autoDelete': True,
-             'initializeParams': {
-                 'sourceimage': source_disk_image,
-              }
+        'disks': [
+            {
+                'boot': True,
+                'autoDelete': True,
+                'initializeParams': {
+                    'sourceImage': source_disk_image,
+                }
             }
-          ],
+        ],
          # Specify a network interface with NAT to access the public
          # internet.
      'networkInterfaces': [{
@@ -81,4 +79,3 @@ newinstance = create_instance(compute, project, zone, name)
 instances = list_instances(compute, project, zone)
 pprint.pprint(newinstance)
 pprint.pprint(instances)
-~                                           
