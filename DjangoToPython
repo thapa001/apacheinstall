@@ -1,5 +1,5 @@
 #!/usr/bin/python
-imports os
+import os
 os.system('yum -y install python-pip')
 os.system('pip install virtualenv')        
 os.system('pip install --upgrade pip')   
