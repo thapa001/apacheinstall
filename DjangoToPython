@@ -1,45 +1,41 @@
 #!/usr/bin/python
-
 imports os
- os.system('yum -y install python-pip')
- os.system('pip install virtualenv')        
- os.system('pip install --upgrade pip')   
- 
- 
- ##mkdir /opt/django
- os.mkdir('/opt/django/')
- os.chdir('/opt/django')
- 
- 
- #running python 2 but  want 3.6
- os.system('yum -y install python36')
- os.system('virtualenv -p python36 django')
- print("Good-to-Go")
- os.system('source /opt/django/django/bin/activate && pip install django')
- print("Good-to-Go")
- #still in 2.7.5 need 3.6
- 
- os.chdir('/opt/django')
- print("Good-to-Go")
- os.system('source /opt/django/django/bin/activate ' + \
+os.system('yum -y install python-pip')
+os.system('pip install virtualenv')        
+os.system('pip install --upgrade pip')   
+
+#mkdir /opt/django
+os.mkdir('/opt/django/')
+os.chdir('/opt/django')
+
+#running python 2 but  want 3.6
+os.system('yum -y install python36')
+os.system('virtualenv -p python36 django')
+print("Good-to-Go")
+os.system('source /opt/django/django/bin/activate && pip install django')
+print("Good-to-Go")
+
+#still in 2.7.5 need 3.6
+os.chdir('/opt/django')
+print("Good-to-Go")
+os.system('source /opt/django/django/bin/activate ' + \
            '&& django-admin --version ' + \
            '&& django-admin startproject project1')
- print("Good-to-Go")
+print("Good-to-Go")
 
- ##change ownership from root to a user  
- os.system('chown -R pradip00700pradip /opt/django')  
- print("Good-to-Go")
- os.system('chown -R pradip00700pradip /opt/django/project1')
- print("Good-to-Go")
+#change ownership from root to a user  
+os.system('chown -R pradip00700pradip /opt/django')  
+print("Good-to-Go")
+os.system('chown -R pradip00700pradip /opt/django/project1')
+print("Good-to-Go")
  
- #start django server
- 
- os.system('sudo -u pradip00700pradip sh -c "source /opt/django/django/bin/activate' + \
+#start django server
+os.system('sudo -u pradip00700pradip sh -c "source /opt/django/django/bin/activate' + \
             '&& python /opt/django/project1/manage.py runserver 0.0.0.0:8000&"')
- print("Good-to-Go")
+print("Good-to-Go")
  
- # django url and allow ip address to work
- #os.system('grep -iR ALLOWED /opt/django/project1')
- #os.system('vim /opt/django/project1/project1/settings.py')
- #os.system('/home/pradip00700pradip') 
+# django url and allow ip address to work
+#os.system('grep -iR ALLOWED /opt/django/project1')
+#os.system('vim /opt/django/project1/project1/settings.py')
+#os.system('/home/pradip00700pradip') 
  
