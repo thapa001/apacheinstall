@@ -1,9 +1,5 @@
 #!/usr/bin/python
-import os       #import os library
-import time
-
-time.sleep(60) #create a delay before running script
-
+import os #import os library
 #define setup_install function
 def setup_install():
         print(" Installing stuff")
