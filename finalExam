@@ -9,7 +9,7 @@ project = "aerobic-kit-217802"
 zone = "us-east1-b"
 #what kind of machine is being requested and what should it's name be?
 #based on the machine type, we can derrive a name
-name = "testing"
+name = "testing001"
 def list_instances(compute, project, zone):
     result = compute.instances().list(project=project, zone=zone).execute()
     return result['items']
