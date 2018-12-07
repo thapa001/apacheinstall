@@ -25,7 +25,7 @@ def django_start():
         os.system('sudo -u pradip00700pradip sh -c "source /opt/django/django/bin/activate' + \
                    ' && python /opt/django/project1/manage.py runserver 0.0.0.0:8000&"')
                    
-                   
+os.system("myip=$(curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//') && sed -i \"s/ALLOWED_HOSTS = \[\]/ALLOWED_HOSTS = \[\'$myip\'\]/g\" /opt/django/project1/project1/settings.py")                   
 #call functions
 setup_install()
 django_start()
